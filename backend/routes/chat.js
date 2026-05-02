@@ -1,18 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const Anthropic = require("@anthropic-ai/sdk");
+const Groq = require("groq-sdk");
 const fs = require("fs");
 const path = require("path");
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const client = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 const CHAT_PROMPT = fs.readFileSync(
   path.join(__dirname, "../prompts/03_chat_agent_prompt.txt"),
   "utf-8"
 );
 
-// POST /api/chat
-// Body: { message, language, workerContext, history }
 router.post("/", async (req, res) => {
   try {
     const { message, language = "English", workerContext, history = [] } = req.body;
@@ -31,20 +29,24 @@ IMPORTANT: Respond ONLY in ${language}. Keep responses simple, warm, and under 4
 
     const messages = [
       ...history,
-      { role: "user", content: message }
+      { role: "user", content: message },
     ];
 
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+    const response = await client.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
       max_tokens: 1000,
-      system: systemPrompt,
-      messages,
+      messages: [
+        { role: "system", content: systemPrompt },
+        ...messages,
+      ],
     });
+
+    const reply = response.choices[0].message.content;
 
     res.json({
       success: true,
-      reply: response.content[0].text,
-      history: [...messages, { role: "assistant", content: response.content[0].text }],
+      reply,
+      history: [...messages, { role: "assistant", content: reply }],
     });
   } catch (err) {
     console.error("Chat error:", err);
