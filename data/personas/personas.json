@@ -1,0 +1,83 @@
+[
+  {
+    "id": "ravi",
+    "name": "Ravi Kumar",
+    "platform": "Swiggy",
+    "city": "Bengaluru",
+    "years": 3,
+    "platformRating": 4.8,
+    "deliveries": 4200,
+    "quote": "I have been delivering for 3 years. Banks kept saying no. Kharcha showed them who I really am.",
+    "csvFile": "ravi_swiggy.csv",
+    "expectedScore": 684,
+    "trend": "improving",
+    "avatar": "🛵",
+    "monthlyIncomes": [18200, 20100, 19800, 22400, 24100, 26800],
+    "monthlyTransactions": [45, 48, 46, 52, 56, 60],
+    "monthlyExpenses": [12000, 12500, 12200, 13000, 13500, 14000],
+    "totalIncome": 131400,
+    "totalExpenses": 77200,
+    "expenseCategories": {
+      "Food": 8400,
+      "Fuel": 5800,
+      "Rent": 39000,
+      "Savings": 12000,
+      "Entertainment": 2800,
+      "Other": 9200
+    }
+  },
+  {
+    "id": "meena",
+    "name": "Meena Devi",
+    "platform": "Ola",
+    "city": "Bengaluru",
+    "years": 2,
+    "platformRating": 4.5,
+    "deliveries": 2800,
+    "quote": "Some months are great, some are tough. I just need someone to see my full picture.",
+    "csvFile": "meena_ola.csv",
+    "expectedScore": 521,
+    "trend": "volatile",
+    "avatar": "🚗",
+    "monthlyIncomes": [28000, 14000, 31000, 12000, 29000, 16000],
+    "monthlyTransactions": [62, 38, 68, 34, 65, 40],
+    "monthlyExpenses": [18000, 16000, 19000, 15000, 18500, 16500],
+    "totalIncome": 130000,
+    "totalExpenses": 103000,
+    "expenseCategories": {
+      "Food": 12000,
+      "Fuel": 18000,
+      "Rent": 42000,
+      "Savings": 4000,
+      "Entertainment": 8000,
+      "Other": 19000
+    }
+  },
+  {
+    "id": "suresh",
+    "name": "Suresh Babu",
+    "platform": "Urban Company",
+    "city": "Hyderabad",
+    "years": 5,
+    "platformRating": 4.9,
+    "deliveries": 1200,
+    "quote": "I do quality work every day. Finally someone can prove it to a bank.",
+    "csvFile": "suresh_urbancompany.csv",
+    "expectedScore": 742,
+    "trend": "stable",
+    "avatar": "🔧",
+    "monthlyIncomes": [34000, 36000, 33000, 37000, 35000, 38000],
+    "monthlyTransactions": [28, 30, 27, 32, 29, 33],
+    "monthlyExpenses": [18000, 18500, 17800, 19000, 18200, 19500],
+    "totalIncome": 213000,
+    "totalExpenses": 111000,
+    "expenseCategories": {
+      "Food": 14400,
+      "Fuel": 8400,
+      "Rent": 54000,
+      "Savings": 18000,
+      "Entertainment": 4200,
+      "Other": 12000
+    }
+  }
+]
