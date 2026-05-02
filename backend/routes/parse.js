@@ -1,37 +1,37 @@
 const express = require("express");
 const router = express.Router();
-const Anthropic = require("@anthropic-ai/sdk");
+const Groq = require("groq-sdk");
 const fs = require("fs");
 const path = require("path");
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const client = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-// Load the parser prompt
 const PARSER_PROMPT = fs.readFileSync(
   path.join(__dirname, "../prompts/01_upi_parser_prompt.txt"),
   "utf-8"
 );
 
 // POST /api/parse
-// Body: { csvData: "raw CSV string" }
 router.post("/", async (req, res) => {
   try {
     const { csvData } = req.body;
     if (!csvData) return res.status(400).json({ error: "No CSV data provided" });
 
-    const message = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+    // Only send first 90 rows to stay within token limit
+    const trimmedCsv = csvData.split('\n').slice(0, 90).join('\n');
+
+    const response = await client.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
       max_tokens: 1000,
       messages: [
         {
           role: "user",
-          content: `${PARSER_PROMPT}\n\nHere is the UPI transaction CSV data:\n${csvData}`,
+          content: `${PARSER_PROMPT}\n\nHere is the UPI transaction CSV data:\n${trimmedCsv}`,
         },
       ],
     });
 
-    const raw = message.content[0].text;
-    // Strip markdown code fences if present
+    const raw = response.choices[0].message.content;
     const clean = raw.replace(/```json|```/g, "").trim();
     const parsed = JSON.parse(clean);
 
