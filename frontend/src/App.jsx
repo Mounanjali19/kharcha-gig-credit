@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import LenderPortal from "./pages/LenderPortal";
 
 const PHONE_MAP = {
   '7777777777': 'suresh',
@@ -173,13 +174,23 @@ function ScoreGauge({ score, animKey }) {
 }
 
 async function askClaude(system, userMsg) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+  const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 300, system, messages: [{ role: 'user', content: userMsg }] }),
+    headers: { 
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`,
+    },
+    body: JSON.stringify({ 
+      model: 'llama-3.3-70b-versatile',
+      max_tokens: 300, 
+      messages: [
+        { role: 'system', content: system },
+        { role: 'user', content: userMsg }
+      ] 
+    }),
   })
   const data = await res.json()
-  return data.content?.[0]?.text || 'Sorry, could not get a response.'
+  return data.choices?.[0]?.message?.content || 'Sorry, could not get a response.'
 }
 
 export default function App() {
@@ -201,6 +212,7 @@ export default function App() {
   const [pin,             setPin]             = useState('')
   const [loginError,      setLoginError]      = useState('')
   const [listening,       setListening]       = useState(false)
+  const [showLender,      setShowLender]      = useState(false)
 
   const chatEndRef   = useRef(null)
   const scoreAnimRef = useRef(null)
@@ -406,6 +418,8 @@ export default function App() {
   const handleWhatsApp = () => {
     window.open(`https://wa.me/?text=${encodeURIComponent(`Here is my Kharcha Financial Health Report — Score ${p.score}/850. I qualify for ${p.loan} microloan.`)}`, '_blank')
   }
+
+  if (showLender) return <LenderPortal onBack={() => setShowLender(false)} />
 
   return (
     <div>
@@ -744,7 +758,7 @@ export default function App() {
           <div className="action-bar">
             <button className="action-btn primary"   onClick={handleDownload}>{L.download}</button>
             <button className="action-btn whatsapp"  onClick={handleWhatsApp}>{L.whatsapp}</button>
-            <button className="action-btn lender"    onClick={() => window.alert('Lender portal — /lender route.')}>{L.lender}</button>
+            <button className="action-btn lender"    onClick={() => setShowLender(true)}>{L.lender}</button>
           </div>
         </div>
       </div>
