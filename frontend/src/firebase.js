@@ -11,9 +11,20 @@ const firebaseConfig = {
   measurementId: "G-W5VYDPDEZF",
 };
 
-const app = initializeApp(firebaseConfig);
+let app;
+let auth;
+let googleProvider;
 
-export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
+try {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  googleProvider = new GoogleAuthProvider();
+} catch (err) {
+  console.warn("Firebase initialization warning:", err.message);
+  // Create fallback objects to prevent app crash
+  auth = null;
+  googleProvider = null;
+}
 
+export { auth, googleProvider };
 export default app;

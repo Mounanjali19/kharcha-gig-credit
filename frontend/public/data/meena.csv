@@ -1,0 +1,214 @@
+date,description,amount,type
+2024-11-01,Urban Company booking,505.41,credit
+2024-11-01,Online shopping,8997.17,debit
+2024-11-02,Job completed payout,1327.75,credit
+2024-11-02,Grocery,399.34,debit
+2024-11-03,Ola driver payout,873.83,credit
+2024-11-04,Ola driver payout,1241.82,credit
+2024-11-04,Grocery,194.17,debit
+2024-11-05,BHIM UPI credit,682.64,credit
+2024-11-05,EMI debit,399.25,debit
+2024-11-06,Google Pay received,642.08,credit
+2024-11-06,Rent payment,253.21,debit
+2024-11-07,Insurance premium,427.58,debit
+2024-11-07,Grocery,958.3,debit
+2024-11-12,Customer payment,1617.85,credit
+2024-11-13,Trip earning,1013.81,credit
+2024-11-13,EMI debit,239.21,debit
+2024-11-14,Google Pay received,200.0,credit
+2024-11-15,Google Pay received,607.36,credit
+2024-11-15,Food order,179.88,debit
+2024-11-16,Job completed payout,922.63,credit
+2024-11-17,Ola driver payout,1024.45,credit
+2024-11-17,Fuel recharge,170.99,debit
+2024-11-18,Mobile recharge,384.5,debit
+2024-11-20,EMI debit,470.55,debit
+2024-11-20,Insurance premium,701.34,debit
+2024-11-21,EMI debit,186.26,debit
+2024-11-22,EMI debit,318.77,debit
+2024-11-23,Rent payment,344.69,debit
+2024-11-23,Electricity bill,695.0,debit
+2024-11-24,Medicine,300.19,debit
+2024-11-25,Urban Company booking,796.85,credit
+2024-11-26,Paytm credit,759.44,credit
+2024-11-27,Ola driver payout,992.5,credit
+2024-11-28,Customer payment,927.09,credit
+2024-11-28,Mobile recharge,691.29,debit
+2024-11-29,Customer payment,1073.84,credit
+2024-11-30,Electricity bill,213.49,debit
+2024-11-30,Electricity bill,960.14,debit
+2024-12-01,Electricity bill,7139.17,debit
+2024-12-02,Insurance premium,335.67,debit
+2024-12-03,Mobile recharge,205.09,debit
+2024-12-04,Electricity bill,479.49,debit
+2024-12-05,Trip earning,895.55,credit
+2024-12-05,Online shopping,1028.11,debit
+2024-12-06,Paytm credit,642.15,credit
+2024-12-06,Online shopping,178.55,debit
+2024-12-07,Urban Company booking,1117.04,credit
+2024-12-07,Food order,362.48,debit
+2024-12-08,Trip earning,1413.37,credit
+2024-12-08,Electricity bill,329.32,debit
+2024-12-09,Rent payment,387.38,debit
+2024-12-10,EMI debit,257.95,debit
+2024-12-11,Food order,643.1,debit
+2024-12-14,Grocery,324.08,debit
+2024-12-15,EMI debit,336.4,debit
+2024-12-16,Rent payment,383.82,debit
+2024-12-17,Job completed payout,730.98,credit
+2024-12-17,Mobile recharge,409.71,debit
+2024-12-18,Urban Company booking,419.1,credit
+2024-12-18,Food order,177.25,debit
+2024-12-19,Urban Company booking,605.97,credit
+2024-12-19,Fuel recharge,291.55,debit
+2024-12-20,Google Pay received,1283.86,credit
+2024-12-20,Grocery,291.76,debit
+2024-12-21,Trip earning,563.35,credit
+2024-12-21,Insurance premium,481.67,debit
+2024-12-22,Swiggy payment received,1142.95,credit
+2024-12-23,Medicine,187.05,debit
+2024-12-24,Insurance premium,177.53,debit
+2024-12-26,Rent payment,943.26,debit
+2024-12-27,Mobile recharge,217.87,debit
+2024-12-28,Electricity bill,485.38,debit
+2024-12-29,Ola driver payout,481.38,credit
+2024-12-29,Medicine,185.98,debit
+2024-12-30,Trip earning,810.22,credit
+2024-12-30,Electricity bill,203.5,debit
+2024-12-31,Urban Company booking,672.06,credit
+2024-12-31,Rent payment,482.95,debit
+2025-01-01,Mobile recharge,7927.91,debit
+2025-01-01,EMI debit,352.81,debit
+2025-01-05,Online shopping,314.12,debit
+2025-01-07,EMI debit,175.97,debit
+2025-01-08,BHIM UPI credit,998.49,credit
+2025-01-08,EMI debit,279.06,debit
+2025-01-09,Urban Company booking,773.76,credit
+2025-01-10,Urban Company booking,727.41,credit
+2025-01-10,Grocery,357.93,debit
+2025-01-11,Paytm credit,496.45,credit
+2025-01-11,EMI debit,483.98,debit
+2025-01-12,Fuel recharge,468.17,debit
+2025-01-13,Food order,361.75,debit
+2025-01-16,Insurance premium,952.29,debit
+2025-01-17,Online shopping,397.67,debit
+2025-01-18,PhonePe credit,717.86,credit
+2025-01-18,EMI debit,363.43,debit
+2025-01-19,Paytm credit,1035.62,credit
+2025-01-20,Trip earning,1388.91,credit
+2025-01-21,Rent payment,370.81,debit
+2025-01-22,Rent payment,345.29,debit
+2025-01-23,Medicine,448.05,debit
+2025-01-24,Electricity bill,557.05,debit
+2025-01-26,Fuel recharge,379.62,debit
+2025-01-27,Fuel recharge,398.09,debit
+2025-01-27,Grocery,891.25,debit
+2025-01-28,BHIM UPI credit,1371.77,credit
+2025-01-29,Ola driver payout,638.71,credit
+2025-01-29,EMI debit,395.99,debit
+2025-01-30,BHIM UPI credit,471.99,credit
+2025-01-31,Medicine,384.66,debit
+2025-02-01,EMI debit,7036.46,debit
+2025-02-01,Grocery,482.91,debit
+2025-02-02,Online shopping,1199.98,debit
+2025-02-03,Fuel recharge,253.53,debit
+2025-02-04,Food order,338.92,debit
+2025-02-05,Insurance premium,381.68,debit
+2025-02-07,Mobile recharge,213.3,debit
+2025-02-08,PhonePe credit,1199.5,credit
+2025-02-09,Trip earning,998.52,credit
+2025-02-09,Grocery,755.01,debit
+2025-02-10,BHIM UPI credit,1514.0,credit
+2025-02-13,Electricity bill,487.96,debit
+2025-02-14,Insurance premium,974.81,debit
+2025-02-15,Electricity bill,304.21,debit
+2025-02-16,Urban Company booking,856.8,credit
+2025-02-17,BHIM UPI credit,1113.89,credit
+2025-02-17,Fuel recharge,206.72,debit
+2025-02-17,Insurance premium,923.26,debit
+2025-02-18,Job completed payout,509.89,credit
+2025-02-18,Fuel recharge,836.41,debit
+2025-02-19,Medicine,477.0,debit
+2025-02-20,Online shopping,193.64,debit
+2025-02-20,Rent payment,612.22,debit
+2025-02-21,Electricity bill,329.67,debit
+2025-02-22,Online shopping,468.68,debit
+2025-02-24,Grocery,288.76,debit
+2025-02-25,Food order,178.56,debit
+2025-02-26,Insurance premium,184.68,debit
+2025-02-27,Trip earning,998.38,credit
+2025-02-27,Online shopping,201.12,debit
+2025-02-27,EMI debit,1142.18,debit
+2025-02-28,Ola driver payout,664.81,credit
+2025-02-28,Online shopping,440.89,debit
+2025-03-01,Trip earning,994.11,credit
+2025-03-01,Grocery,7938.22,debit
+2025-03-02,Urban Company booking,290.14,credit
+2025-03-02,Medicine,225.48,debit
+2025-03-02,Medicine,1158.16,debit
+2025-03-05,Food order,233.45,debit
+2025-03-06,Mobile recharge,1085.68,debit
+2025-03-07,Food order,337.62,debit
+2025-03-08,Insurance premium,401.49,debit
+2025-03-09,Electricity bill,273.49,debit
+2025-03-10,Electricity bill,383.88,debit
+2025-03-11,Job completed payout,728.31,credit
+2025-03-11,Online shopping,483.69,debit
+2025-03-12,Job completed payout,1892.0,credit
+2025-03-13,Urban Company booking,1334.97,credit
+2025-03-13,Electricity bill,455.67,debit
+2025-03-13,Mobile recharge,770.82,debit
+2025-03-14,Rent payment,411.56,debit
+2025-03-15,Medicine,234.39,debit
+2025-03-16,Online shopping,353.67,debit
+2025-03-17,Insurance premium,273.3,debit
+2025-03-19,Urban Company booking,865.84,credit
+2025-03-20,Job completed payout,857.59,credit
+2025-03-20,Online shopping,213.8,debit
+2025-03-20,Fuel recharge,1001.23,debit
+2025-03-21,Job completed payout,832.18,credit
+2025-03-21,Fuel recharge,641.11,debit
+2025-03-23,Fuel recharge,258.53,debit
+2025-03-25,Mobile recharge,376.42,debit
+2025-03-26,Paytm credit,964.14,credit
+2025-03-26,Electricity bill,959.01,debit
+2025-03-27,Job completed payout,650.09,credit
+2025-03-27,EMI debit,429.77,debit
+2025-03-28,Swiggy payment received,803.17,credit
+2025-03-28,Online shopping,303.91,debit
+2025-03-29,Swiggy payment received,1093.73,credit
+2025-03-29,EMI debit,215.39,debit
+2025-03-30,Ola driver payout,1444.97,credit
+2025-03-30,Mobile recharge,429.05,debit
+2025-03-31,Medicine,298.57,debit
+2025-04-01,Online shopping,8990.2,debit
+2025-04-01,Mobile recharge,252.82,debit
+2025-04-01,Electricity bill,729.54,debit
+2025-04-02,Medicine,306.07,debit
+2025-04-03,Electricity bill,305.37,debit
+2025-04-07,Mobile recharge,384.91,debit
+2025-04-08,Swiggy payment received,1086.2,credit
+2025-04-08,Insurance premium,412.46,debit
+2025-04-08,Medicine,521.8,debit
+2025-04-09,Job completed payout,889.16,credit
+2025-04-10,BHIM UPI credit,502.09,credit
+2025-04-10,Grocery,194.18,debit
+2025-04-12,Medicine,607.41,debit
+2025-04-13,Electricity bill,279.84,debit
+2025-04-14,Online shopping,198.19,debit
+2025-04-15,Online shopping,247.54,debit
+2025-04-16,Online shopping,215.12,debit
+2025-04-17,PhonePe credit,663.47,credit
+2025-04-17,EMI debit,1042.48,debit
+2025-04-18,Job completed payout,973.57,credit
+2025-04-19,Google Pay received,477.05,credit
+2025-04-21,Medicine,175.92,debit
+2025-04-21,Grocery,999.36,debit
+2025-04-25,EMI debit,251.63,debit
+2025-04-26,Fuel recharge,398.35,debit
+2025-04-27,Electricity bill,276.52,debit
+2025-04-28,Job completed payout,526.62,credit
+2025-04-29,Swiggy payment received,200.0,credit
+2025-04-29,Electricity bill,322.91,debit
+2025-04-30,Customer payment,1135.19,credit
+2025-04-30,Food order,313.59,debit
