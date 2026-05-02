@@ -28,7 +28,6 @@ Current worker context:
 IMPORTANT: Respond ONLY in ${language}. Keep responses simple, warm, and under 4 sentences.`;
 
     const messages = [
-      ...history,
       { role: "user", content: message },
     ];
 
