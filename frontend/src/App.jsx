@@ -447,6 +447,50 @@ export default function App() {
     setScreen('signin')
   }
 
+  const handleDownload = async () => {
+    try {
+      const workerData = {
+        name: p.name,
+        platform: p.platform || p.sub.split(' · ')[0] || 'Gig Platform',
+        avgIncome: p.stats?.[0]?.value?.replace('₹', '').replace(/,/g, '') || '0',
+        transactions: p.stats?.[1]?.value || 'N/A',
+        incomeVariance: p.stats?.[3]?.value || 'N/A',
+        topPayer: p.stats?.[2]?.value || 'N/A',
+        tips: p.tips || [],
+        months: p.months || [],
+        incomes: p.income || [],
+      }
+      const scoreData = {
+        finalScore: p.score,
+        tier: p.tier,
+        factors: p.factors,
+        beforeScore: p.beforeScore || Math.max(300, p.score - 50),
+      }
+
+      const response = await fetch('http://localhost:5000/api/pdf/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ workerData, scoreData }),
+      })
+      if (!response.ok) {
+        const errorText = await response.text()
+        throw new Error(`PDF generation failed: ${response.status} ${response.statusText} - ${errorText}`)
+      }
+      const result = await response.json()
+      if (!result.success) throw new Error(result.error || 'PDF generation failed')
+
+      const link = document.createElement('a')
+      link.href = `http://localhost:5000${result.downloadUrl}`
+      link.download = result.filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    } catch (err) {
+      console.error('PDF download error:', err)
+      window.alert(`PDF download failed. Make sure the backend is running on port 5000.\n${err.message}`)
+    }
+  }
+
   const handleVoice = () => {
     if (listening && voiceRef.current) { voiceRef.current.stop(); setListening(false); return }
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition
@@ -893,7 +937,7 @@ export default function App() {
 
           {/* ACTIONS */}
           <div className="action-bar">
-            <button className="action-btn primary"   onClick={() => window.alert('PDF report — wire to jsPDF + Claude API.')}>{L.download}</button>
+            <button className="action-btn primary"   onClick={handleDownload}>{L.download}</button>
             <button className="action-btn whatsapp"  onClick={handleWhatsApp}>{L.whatsapp}</button>
             <button className="action-btn lender"    onClick={() => window.alert('Lender portal — /lender route.')}>{L.lender}</button>
           </div>
