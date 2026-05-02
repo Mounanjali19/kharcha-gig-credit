@@ -86,7 +86,16 @@ router.post("/", (req, res) => {
   try {
     const { parsedData } = req.body;
     if (!parsedData) return res.status(400).json({ error: "No parsed data provided" });
-    const result = calculateGigScore(parsedData);
+    
+    // Handle both formats: direct data or wrapped in { data: ... }
+    const data = parsedData.data || parsedData;
+    
+    if (!data.monthlyIncomes) {
+      console.error("Missing monthlyIncomes in:", data);
+      return res.status(400).json({ error: "Invalid parsed data structure" });
+    }
+    
+    const result = calculateGigScore(data);
     res.json({ success: true, ...result });
   } catch (err) {
     console.error("Score error:", err);
