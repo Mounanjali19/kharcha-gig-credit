@@ -172,17 +172,11 @@
   font-weight:800;
   letter-spacing:0.18em;
   color:#0F172A;
-  text-shadow:
-    0 0 30px rgba(249,115,22,0.18),
-    0 0 60px rgba(249,115,22,0.08);
   display:inline-block;
 }
-.nav-hero-title .brand-accent {
+.nav-hero-title .brand-dot,
+.nav-brand .brand-dot {
   color:var(--orange);
-  text-shadow:
-    0 0 20px rgba(249,115,22,0.55),
-    0 0 50px rgba(249,115,22,0.28),
-    0 0 90px rgba(249,115,22,0.12);
 }
 
 /* ── PILL NAVBAR ── */
@@ -213,6 +207,12 @@
   flex-shrink:0;
 }
 .nav-logo .dot { color:var(--orange); }
+.nav-brand {
+  color:#0F172A;
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:0.14em;
+}
 
 .nav-spacer { flex:1; }
 
@@ -244,6 +244,24 @@
   color:#fff;font-weight:700;font-size:13px;cursor:pointer;
   box-shadow:0 2px 8px var(--orange-glow-strong);
   flex-shrink:0;
+}
+
+.loggedin-strip {
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:12px 2rem 0;
+  pointer-events:all;
+  position:relative;
+  z-index:101;
+}
+.loggedin-dot {
+  width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,#F97316,#FBBF24);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:13px;font-weight:700;flex-shrink:0;
+  box-shadow:0 2px 8px var(--orange-glow-strong);
+}
+.loggedin-text {
+  font-size:13px;color:var(--text2);font-weight:500;
 }
 
 /* ── PERSONA ROW ── */
@@ -429,18 +447,23 @@
   content:'';position:absolute;bottom:-60px;right:-60px;
   width:200px;height:200px;border-radius:50%;
   background:radial-gradient(circle,rgba(251,191,36,0.2) 0%,transparent 70%);
+  pointer-events:none;
 }
 .loan-label { font-size:12px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px; }
 .loan-amount { font-size:32px;font-weight:800;color:#fff;letter-spacing:-1px; }
 .loan-detail { font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px; }
-.lender-chips { display:flex;gap:10px;align-items:center;flex-wrap:wrap; }
+.lender-chips { display:flex;gap:10px;align-items:center;flex-wrap:wrap; position:relative; z-index:1; }
 .lender-chip {
-  padding:8px 18px;border-radius:var(--radius-pill);
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:126px;min-height:42px;padding:10px 18px;border-radius:var(--radius-pill);
   border:1.5px solid var(--orange);
   color:var(--orange);font-weight:700;font-size:13px;
   background:rgba(249,115,22,0.1);
   box-shadow:0 0 12px var(--orange-glow);
   cursor:pointer;transition:all 0.2s;
+  position:relative;z-index:1;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
 }
 .lender-chip:hover { background:var(--orange);color:#fff;box-shadow:0 4px 16px var(--orange-glow-strong); }
 
