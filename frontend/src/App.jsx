@@ -200,19 +200,19 @@ function ScoreGauge({ score, color, animKey }) {
 }
 
 // ── CLAUDE API ─────────────────────────────────────────────
-async function askClaude(system, userMsg) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+async function askClaude(system, userMsg, history = []) {
+  const res = await fetch('http://localhost:3001/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 300,
-      system,
-      messages: [{ role: 'user', content: userMsg }],
+      message: userMsg,
+      language: system.match(/Reply ONLY in (\w+)/)?.[1] || 'English',
+      workerContext: {},
+      history,
     }),
   })
   const data = await res.json()
-  return data.content?.[0]?.text || 'Could not connect. Please try again.'
+  return data.reply || 'Could not connect. Please try again.'
 }
 
 // ── APP ────────────────────────────────────────────────────
@@ -257,7 +257,7 @@ CRITICAL: Reply ONLY in ${langName}. Max 2-3 sentences. Simple language. Be spec
     setChatLoading(true)
     setChatLog(prev => [...prev, { role: 'bot', text: '...', loading: true }])
     try {
-      const reply = await askClaude(systemPrompt, msg)
+      const reply = await askClaude(systemPrompt, msg, chatLog)
       setChatLog(prev => prev.map((m, i) => i === prev.length - 1 ? { role: 'bot', text: reply } : m))
     } catch {
       setChatLog(prev => prev.map((m, i) => i === prev.length - 1 ? { role: 'bot', text: 'Network error — please try again.' } : m))
@@ -275,7 +275,7 @@ CRITICAL: Reply ONLY in ${langName}. Max 2-3 sentences. Simple language. Be spec
     const sys = `Explain a gig worker's credit score simply and warmly. No jargon. Max 3 sentences. Reply ONLY in ${langName}.`
     const msg = `Name: ${p.name}. Score: ${p.score}/850. Factors: Income Consistency ${p.factors[0].value}% (30%), Earning Trend ${p.factors[1].value}% (25%), Transaction Volume ${p.factors[2].value}% (25%), Expense Control ${p.factors[3].value}% (20%). Explain simply.`
     try {
-      const reply = await askClaude(sys, msg)
+      const reply = await askClaude(sys, msg, chatLog)
       setChatLog(prev => prev.map((m, i) => i === prev.length - 1 ? { role: 'bot', text: reply } : m))
     } catch {
       setChatLog(prev => prev.map((m, i) => i === prev.length - 1 ? { role: 'bot', text: 'Network error.' } : m))
